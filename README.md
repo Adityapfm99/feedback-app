@@ -1,17 +1,15 @@
 # feedback-app
 
-## Setup
 1. How to Start
     ```bash
     1. git clone https://github.com/Adityapfm99/feedback-app
     2. python -m venv env
     3. source env/bin/activate
     4. pip install -r requirements.txt
-    5. Rename file env_sample to .env
+    5. Rename file .env_sample to .env
     6. alembic revision --autogenerate -m "Create feedback table"
     7. alembic upgrade head
     ```
-
 
 2. Run the FastAPI server (backend):
 
@@ -24,6 +22,11 @@
     npm run serve
     ```
     ![Alt text](/image/ui.png)
+      ```bash
+    succesfuly created
+    ```
+
+    ![Alt text](/image/submitted.png)
 
 ## API Documentation Swagger
 
