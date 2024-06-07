@@ -33,6 +33,15 @@
     result db
     ```
     ![Alt text](/image/result_db.png)
+
+    ```bash
+        
+        curl --location 'http://localhost:8000/feedback/' \
+            --header 'Content-Type: application/json' \
+            --data '{
+                "rating": 1
+            }'
+     ```
 ## API Documentation Swagger
 
 4. The API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs)
@@ -43,8 +52,8 @@
 
 5. To run the tests, make sure you have a local Postgres instance running and a test database created. Then, run:
 
-```bash
-pytest
- ```
+    ```bash
+    pytest
+    ```
 
-![Alt text](/image/unittest.png)
+    ![Alt text](/image/unittest.png)
