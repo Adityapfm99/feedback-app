@@ -20,7 +20,7 @@
 
     ```bash
     and migration script is generated
-     ![Alt text](/image/migration_script.png.png)
+     ![Alt text](/image/migration_script.png)
     ```
 
      ```bash
