@@ -8,19 +8,31 @@
     pip install -r requirements.txt
     ```
 
-2. Set up the database:
+2. Created the migration script:
 
     ```bash
-    alembic upgrade head
+    alembic revision --autogenerate -m "Initial migration"
     ```
 
-3. Run the FastAPI server:
+3. Apply the New Migration:
+
+    ```bash
+   alembic upgrade head
+    ```
+
+
+
+4. Run the FastAPI server (backend):
 
     ```bash
     uvicorn app.main:app --reload
     ```
 
-4. Open `frontend/index.html` in your browser.
+5. Run the FastAPI server (Frontend):
+
+    ```bash
+   npm run serve
+    ```
 
 ## API Documentation Swagger
 
