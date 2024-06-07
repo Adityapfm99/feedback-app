@@ -20,8 +20,9 @@
 
     ```bash
     and migration script is generated
-     ![Alt text](/image/migration_script.png)
     ```
+     ![Alt text](/image/migration_script.png)
+
 
      ```bash
         alembic upgrade head
