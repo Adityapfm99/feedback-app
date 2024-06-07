@@ -36,7 +36,7 @@
 
 ## API Documentation Swagger
 
-The API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs).
+The API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ## Tests
 
