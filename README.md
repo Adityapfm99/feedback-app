@@ -12,8 +12,8 @@
 2. Migration Tools (Alembic)
    
     ```bash
-    alembic init alembic
-    alembic revision --autogenerate -m "Create feedback table"
+    run alembic init alembic
+    run alembic revision --autogenerate -m "Create feedback table"
     
     ```
      ![Alt text](/image/alembic.png)
@@ -25,7 +25,7 @@
 
 
      ```bash
-        alembic upgrade head
+    Run alembic upgrade head
     ```
 
 3. Run the FastAPI server (backend):
