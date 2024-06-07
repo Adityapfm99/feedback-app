@@ -40,7 +40,7 @@
     ```bash
     npm run serve
     ```
-    ![Alt text](/image/startfe.png.png)
+    ![Alt text](/image/startfe.png)
     ![Alt text](/image/ui.png)
 
     ```bash
