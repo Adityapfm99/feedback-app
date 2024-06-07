@@ -1,12 +1,16 @@
 
+import os
+from dotenv import load_dotenv
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 
+load_dotenv()
 
-DB_USER = "aditya"
-DB_PASSWORD = "admin"
-DB_NAME = "feedback"
-DB_HOST = "localhost"
+DATABASE_URL = os.getenv("DATABASE_URL")
+DB_USER = os.getenv("USER")
+DB_PASSWORD =os.getenv("PASSWORD")
+DB_NAME = os.getenv("DATABASENAME")
+DB_HOST = os.getenv("HOST")
 DB_PORT = 5432
 
 DATABASE_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{(DB_PORT)}/{DB_NAME}"

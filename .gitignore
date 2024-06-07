@@ -7,7 +7,7 @@ env
 
 /dist
 
-
+.pytest_cache
 # local env files
 .env.local
 .env.*.local

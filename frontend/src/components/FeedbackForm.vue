@@ -43,7 +43,7 @@
         }
         try {
           await axios.post('http://localhost:8000/feedback/', {
-            score: this.score,
+            rating: this.score,
           });
           alert('Feedback submitted!');
           this.score = 0; // Reset the score after submission

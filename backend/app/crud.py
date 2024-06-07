@@ -9,7 +9,7 @@ async def create_feedback(db: AsyncSession, feedback: FeedbackCreate):
         db.add(db_feedback)
         await db.commit()
         await db.refresh(db_feedback)
-        return {"rating": db_feedback.rating}  # Ensure the returned data matches the schema
+        return {"rating": db_feedback.rating} 
     except SQLAlchemyError as e:
         await db.rollback()
         raise e
