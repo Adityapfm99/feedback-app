@@ -48,9 +48,14 @@
     ![Alt text](/image/alert.png)
 
     ```bash
-    Validation rating is null
+    Validation from Frontend side, rating is null
     ```
     ![Alt text](/image/validation.png)
+
+       ```bash
+    Validation from Backend side, rating does not match with range 1 - 5
+    ```
+     ![Alt text](/image/validation_be.png)
 
     ```bash
     result db
