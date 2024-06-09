@@ -6,7 +6,7 @@
     2. python -m venv env
     3. source env/bin/activate
     4. pip install -r requirements.txt
-    5. Rename file .env_sample to .env
+    5. Rename file .env_sample to .env ("this is for storing credentials")
 
     ```
 2. Migration Tools (Alembic)
@@ -45,7 +45,12 @@
     succesfuly created
     ```
 
-    ![Alt text](/image/submitted.png)
+    ![Alt text](/image/alert.png)
+
+    ```bash
+    Validation rating is null
+    ```
+    ![Alt text](/image/validation.png)
 
     ```bash
     result db
