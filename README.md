@@ -28,7 +28,7 @@
 3. Run the FastAPI server (backend):
 
     ```bash
-    uvicorn app.main:app --reload
+    python start.py
     ```
     ![Alt text](/image/startBe.png)
 
@@ -52,10 +52,10 @@
     ```
     ![Alt text](/image/validation.png)
 
-       ```bash
+    ```bash
     Validation from Backend side, rating does not match with range 1 - 5
     ```
-     ![Alt text](/image/validation_be.png)
+     ![Alt text](/image/be_validation.png)
 
     ```bash
     result db

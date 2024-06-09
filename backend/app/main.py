@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, conint, validator
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,6 +18,15 @@ engine = create_async_engine(DATABASE_URL, echo=True)
 async_session = sessionmaker(
     engine, expire_on_commit=False, class_=AsyncSession
 )
+
+#custom error message
+class CustomHTTPException(HTTPException): 
+    def __init__(self, status_code: int, detail: str):
+        self.status_code = status_code
+        self.detail = detail
+        self.state = 'error'
+
+# init swagger
 
 app = FastAPI(
     title="App Feedback API",
@@ -43,15 +52,16 @@ class FeedbackCreate(BaseModel):
 
     @validator('rating')
     def rating_must_be_between_1_and_5(cls, rat):
-        if rat is None  or rat < 1 or rat > 5:
-            raise HTTPException(status_code=404, detail='Rating must be between 1 and 5')
+        if rat is None or rat < 1 or rat > 5:
+            raise CustomHTTPException(status_code=400, detail='Rating must be between 1 and 5')
         return rat
 
-@app.exception_handler(HTTPException)
-async def custom_http_exception_handler(request, exc):
+@app.exception_handler(CustomHTTPException)
+async def custom_http_exception_handler(request: Request, exc: CustomHTTPException):
     return JSONResponse(
         status_code=exc.status_code,
-        content={"message": exc.detail},
+        content={"code": exc.status_code,"status": exc.state, "message": exc.detail},
+    
     )
 
 @app.post("/feedback/", response_model=dict, summary="Create Feedback", description="Create a new feedback with a rating between 1 and 5")
